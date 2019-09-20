@@ -143,31 +143,27 @@
     }
 
 /* 와이드 스크린 스타일 */
-@media screen and (min-width:100em){
-    /* 와이드 레이아웃 순서 */
-    
-    
-    .navigaton,.ad{
-
-        order: 0;
-        
-    }.navigation{
-        flex-basis: 30%;
-    }  
-        
-
-    }.main-content{
-        flex-basis: 50%;
-
-    }.ad{
-       
-        flex-basis: 20%;
-
-    }.footer{
-
+@media screen and (min-width: 100em){
+    /* Wide 레이아웃 순서 */
+    .navigation, .ad{
+      order: 0;
     }
-    .navigation,.
-
+    .navigation, .main-content, .ad{
+      height: calc(100vh - 100px);
+    }
+    /* Wide 내비게이션 */
+    .navigation{
+      flex-basis: 30%;
+    }
+    /* wide 메인 콘텐츠 */
+    .main-content{
+      flex-basis: 50%;
+    }
+    /* wide 광고 */
+    .ad{
+      flex-basis: 20%;
+    }
+  }
 }
 
 
