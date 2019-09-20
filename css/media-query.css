@@ -1,171 +1,133 @@
-@charset "uft-8";
+@charset "utf-8";
 /* 모든 디바이스 */
 *{
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    font-size: 1em;
-    font-weight: 400;
-
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 1em;
+  font-weight: 400;
 }
 /* All 컨테이터 */
 .container{
-    background: silver;
-    display: flex;
-    /* flex-flow: row wrap; */
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-  /* All 헤더 */
+  background: silver;
+  display: flex;
+  /* flex-flow: row wrap; */
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+/* All 헤더 */
+.header{
+  background: yellow;
+}
+/* All 내비게이션 */
+.navigation{
+  background: pink;
+}
+/* All 메인 콘텐츠 */
+.main-content{
+  background: skyblue;
+}
+/* All 광고 */
+.ad{
+  background: orange;
+}
+/* All 푸터 */
+.footer{
+  background: lime;
+}
+/* 모바일 스타일 */
+/* Mobile 헤더 */
+.header{
+  flex-basis: 100%;
+  height: 50px;
+}
+/* Mobile 내비게이션 */
+.navigation{
+  flex-basis: 100%;
+  height: 50px;
+}
+/* Mobile 메인 콘텐츠 */
+.main-content{
+  flex-basis: 100%;
+  height: calc(100vh - 200px);
+}
+/* 광고 */
+.ad{
+  flex-basis: 100%;
+  height: 50px;
+}
+/* 푸터 */
+.footer{
+  flex-basis: 100%;
+  height: 50px;
+}
+/* 태블릿 스타일 */
+@media screen and (min-width: 50em){
+  /* Tablet 헤더 */
   .header{
-    background: yellow;
-    /* height: 10vh; */
+    flex-basis: 70%;
   }
-  /* All 내비게이션 */
+  /* Tablet 내비게이션 */
   .navigation{
-    background: pink;
-    /* height: 10vh; */
+    flex-basis: 30%;
   }
-  /* All 메인 콘텐츠 */
+  /* Tablet 메인 콘텐츠 */
   .main-content{
-    background: skyblue;
-    /* height: 50vh; */
+    flex-basis: 100%;
+    height: calc(100vh - 150px);
   }
-  /* All 광고 */
-  .ad{
-    background: orange;
-    /* height: 20vh; */
-  }
-  /* All 푸터 */
-  .footer{
-    background: lime;
-    /* height: 10vh; */
-  }
-  /* 모바일 스타일 */
-
-  /* @media screen and (max-width: 799px){ */
-    
-    /* Mobile 헤더 */
-    .header{
-        flex-basis:100%;
-        height: 50px;
-        
-    
-    }
-    /* Mobile 내비게이션 */
-    .navigation{
-        flex-basis:100%;
-        height: 50px;
-      
-    }
-    /* Mobile 메인 콘텐츠 */
-    .main-content{
-        flex-basis:100%;
-        height:calc(100vh - 200px);
-     
-    }
-    /* 광고 */
-    .ad{
-        flex-basis:100%;
-        height: 50px;
-      
-    }
-    /* 푸터 */
-    .footer{
-        flex-basis:100%;
-        height: 50px;
-    }
-  
-/* } */
-@media screen and (min-width:50em){ 
- /* 테블릿 스타일 */
-
-   /* 컨테이너 */
-
-   .header{
-       flex:1 1 70%;
-       order: -1;
-
-       
-
-   }.navigation{
-    flex:1 1 30%;
+  /* Tablet 레이아웃 순서 */
+  .header, .navigation, .ad{
     order: -1;
-
-   }
-  
-   /* 메인 콘텐츠 */
-   .main-container{
-       /* flex-basis: 100%; */
-       flex:1 1 100%;
-       height: calc(100vh - 150px);
-       
-      
-    
-       
-   }
-    /* 광고 */
-   .ad{
-    flex:1 1 100%;
-     order:-1;
-
-   }
-   .footer{
-    flex:1 1 100%;
-       
-
-   }
-
-} 
-/* 랩탑 스타일 */
-@media screen and (min-width:64em){
-    /* 랩탑 레이아웃 순서 */
-    .navigation{
-        order: -2;
-        flex-basis: 100%;
-
-    }.header{
-        flex-basis: 100%;
-        
-
-    }.ad{
-        flex-basis: 30%;
-        height: calc(100vh - 150px);
-        
-
-    }.main-content{
-        flex-basis: 70%;
-        
-
-    }.footer{
-        
-
-    }
-
-/* 와이드 스크린 스타일 */
-@media screen and (min-width: 100em){
-    /* Wide 레이아웃 순서 */
-    .navigation, .ad{
-      order: 0;
-    }
-    .navigation, .main-content, .ad{
-      height: calc(100vh - 100px);
-    }
-    /* Wide 내비게이션 */
-    .navigation{
-      flex-basis: 30%;
-    }
-    /* wide 메인 콘텐츠 */
-    .main-content{
-      flex-basis: 50%;
-    }
-    /* wide 광고 */
-    .ad{
-      flex-basis: 20%;
-    }
   }
 }
 
+/* 랩탑 스타일 */
+@media screen and (min-width: 64em){
+  /* Laptop 레이아웃 순서 */
+  .navigation{
+    order: -2;
+  }
+  /* Laptop 헤더 */
+  .header{
+    flex-basis: 100%;
+  }
+  /* Laptop 내비게이션 */
+  .navigation{
+    flex-basis: 100%;
+  }
+  /* Laptop 메인 콘텐츠 */
+  .main-content{
+    flex-basis: 70%;
+  }
+  /* Laptop 광고 */
+  .ad{
+    flex-basis: 30%;
+    height: calc(100vh - 150px);
+  }
+}
+/* 와이드 스크린 스타일 */
+@media screen and (min-width: 100em){
+  /* Wide 레이아웃 순서 */
+  .navigation, .ad{
+    order: 0;
+  }
+  .navigation, .main-content, .ad{
+    height: calc(100vh - 100px);
+  }
+  /* Wide 내비게이션 */
+  .navigation{
+    flex-basis: 30%;
+  }
+  /* wide 메인 콘텐츠 */
+  .main-content{
+    flex-basis: 50%;
+  }
+  /* wide 광고 */
+  .ad{
+    flex-basis: 20%;
+  }
+}
 
 
 
