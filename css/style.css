@@ -1,13 +1,19 @@
 @charset "utf-8";
 @import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
-/* 폰텔로 */
 @import url(./fonts.css);
+:root{
+  --point1:#abd375;
+  --point2:#e8ca58;
+  --point3:#c7b39a;
+  --point4:#eea60a;
+  --point5:#6aaee6;
+}
 *, *::before, *::after { 
   font-family: 'Spoqa Han Sans', 'Sans-serif'; 
   box-sizing: border-box;
 }
 /* Reset CSS */
-ul,ol{
+ul, ol{
   list-style: none;
   padding-left: 0;
 }
@@ -16,7 +22,6 @@ fieldset{
   padding: 0;
   border: 0 none;
 }
-/* 숨긴처리 접근가능 */
 legend, .a11y-hidden{
   position: absolute;
   width: 1px;
@@ -30,14 +35,12 @@ a{
   text-decoration: none;
   color: inherit;
 }
-/* 그리드 모듈 */
+/* grid module */
 .flex-row{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  
-
 }
 .flex-col{
   display: flex;
@@ -45,52 +48,27 @@ a{
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
-/* 모바일 그리드 */
-/* .col-m1{
-  width: 20%;
+.responsive{
+  max-width: 100%;
+  height: auto;
 }
-.col-m2{
-  width: 45%;
+
+/* All Device */
+
+.main{
+  /* background: skyblue; */
 }
-.col-m3{
-  width: 70%;
-}
-.col-m4{
-  width: 100%;
-} */
-
-/* all device */
-.container{
-/* background: silver; */
-
-}
-.header{
-  /* background: yellow; */
-  /* height: 10vh; */
-
-}.navigation{
-  /* background: pink; */
-  /* height: 10vh; */
-  
-
-}.main{
-  background: skyblue;
-  /* height: 70vh; */
-
-}.book{
-background: lime;
+.book{
+  /* background: lime; */
 }
 .news{
-  
   background: goldenrod;
 }
 .board{
   background: teal;
-  
 }
 .favorite{
   background: hotpink;
-  
 }
 .twitter{
   background: aqua;
@@ -99,8 +77,92 @@ background: lime;
   background: orange;
   height: 10vh;
 }
-/* 모바일 디바이스 */
-@media screen and (max-width:62.5em){
+/* All Search */
+.search{
+  text-align: right;
+}
+[type="search"]{
+  border: 1px solid #aaa;
+  border-radius: 0.35em;
+  height: 2em;
+  margin-right: 0.5em;
+}
+/*all main content */
+
+.sprite{
+  background:  url("./images/sprite_main.png")no-repeat;
+  height: 60px;
+  padding-left: 65px;
+  /* background: yellow; */
+
+}
+.main [class*="heading"]{
+  font-size: 1.2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.news-heading{
+  background-position: 0 -230px;
+}
+.board-heading {
+  background-position: 0 -115px;
+}
+.favorite-site-heading {
+  background-position: 0 -345px;
+}
+.twitter-heading {
+  background-position: 0 -460px;
+}
+.book-heading .point{
+  /* color: #abd375; */
+  color: var(--point1);
+}
+.news-heading .point {
+  /* color: #e8ca58; */
+  color: var(--point2);
+}
+.board-heading .point {
+  /* color: #c7b39a; */
+  color: var(--point3);
+}
+.favorite-heading .point {
+  /* color: #eea60a; */
+  color: var(--point4);
+}
+.twitter-heading .point {
+  /* color: #6aaee6; */
+  color: var(--point5);
+}
+.book-cover{
+  /* background: yellow; */
+  text-align: center;
+}.book-detail{
+  /* background: yellow; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.book-author-name{
+  margin-left: 0.5em;
+}
+
+  
+.book-grade{
+  margin: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 1.5em;
+ color: var(--point1);  
+}
+[class$="summary"]{
+  line-height: 2;
+}
+
+
+/* Mobile Device */
+@media screen and (max-width: 62.5em){
+  /* mobile grid */
   .col-m1{
     width: 20%;
   }
@@ -113,23 +175,20 @@ background: lime;
   .col-m4{
     width: 100%;
   }
-  /* 모바일 레이아웃 */
-  
-  
-  /* 모바일 헤더 */
+  /* mobile layout */
+
+  /* mobile header */
   .header{
-    background: #32302E;
+    background: #32302e;
     padding-bottom: 1em;
   }
-  .logo,.member,.search{
+  .logo, .member, .search{
     width: 100%;
-    padding-left:20px;
-    padding-right:20px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
-
-  /* a모바일 멤버 */
+  /* mobile member */
   .member{
-
     order: -1;
     display: flex;
     justify-content: flex-end;
@@ -137,37 +196,27 @@ background: lime;
     color: #fff;
     margin: 0;
     padding-top: 0.5em;
-    
+    padding-bottom: 0.5em;
     /* width: calc(100% + 40px);
     position: relative;
-    left:-20px;
-     */
-  }.member a{
+    left: -20px; */
+  }
+  .member a{
     padding: 0.35em 0;
-    /* background: blue; */
     display: block;
     margin-left: 1em;
   }
-  /* 모바일 서치  */
-  .search{
-    /* background: yellow; */
-    text-align: right;
-  }[type="search"]{
+  /* mobile search */
+  [type="search"]{
     width: calc(100% - 3em);
-  border: 1px solid #aaa;
-  border-radius: 0.35em;
-  height: 2em;
-  width: calc(100% - 3em);
-  margin-right: 0.5em;
-  
-  }.btn-search{
+  }
+  .btn-search{
     border: 0 none;
     padding: 0;
     width: 2em;
     height: 2em;
     position: relative;
     background: transparent;
-
   }
   .btn-search::after{
     content: "";
@@ -176,12 +225,11 @@ background: lime;
     position: absolute;
     top: 0;
     left: 0;
-    background: url("./images/btn_search.png") no-repeat;
+    background: url(./images/btn_search.png) no-repeat;
     background-size: cover;
   }
-  /* 모바일 메뉴 */
+  /* mobile menu */
   .btn-menubar{
-
     width: 2.5em;
     height: 2.5em;
     border: 0 none;
@@ -192,18 +240,17 @@ background: lime;
     background: transparent;
     overflow: hidden;
     cursor: pointer;
-
-  }.menubar{
-    background:#fff;
+  }
+  .menubar{
+    background: #fff;
     width: 100%;
     height: 25%;
-    
     border-radius: 1em;
     position: absolute;
     left: 0;
     transition: all 200ms;
-
-  }.menubar-top{
+  }
+  .menubar-top{
     top: 0;
   }
   .menubar-middle{
@@ -226,200 +273,145 @@ background: lime;
     transform: translateY(-50%) rotate(-45deg);
   }
   .menu{
-    position:fixed;
+    position: fixed;
     top: 0;
     left: 0;
     width: 0;
-    height: 100vh;
     overflow: hidden;
+    height: 100vh;
     transform: translateX(-100%);
     transition: all 200ms;
-
-  }.nav-act .menu{
+  }
+  .nav-act .menu{
     transform: none;
     width: 75vw;
     background: rgba(0,0,0,0.85);
     color: #fff;
     margin: 0;
     padding: 2em;
-
-  }.menu-list{
+  }
+  .menu-list{
     margin: 0.5em 0;
   }
   .menu-item{
     display: block;
     padding: 0.5em;
-    /* background: purple; */
   }
   .sub-menu{
     display: none;
-    list-style: circle;
+    list-style-type: disc;
     padding-left: 2em;
     margin-bottom: 1em;
-    /* background: yellow; */
-
-  }.sub-menu li{
+  }
+  .sub-menu li{
     margin: 0.5em 0;
   }
   .sub-menu a{
     padding: 0.5em 0;
     display: block;
-
   }
   .menu-act .sub-menu{
     display: block;
   }
-  /* .menubar-top{
-    top: 0;
-  }
-  .menubar-middle{
-    top: 50%;
-    transform:translateY(-50%);
-  }
-  .menubar-bottom{
-    top: 100%;
-    transform: translateY(-100%);
-  }
-  .nav-act .menubar-top{
-    top: 50%;
-    transform: translateY(-50%) rotate(45deg);
-    
-  }.nav-act .menubar-middle{
-    transform: translate(-100%, -50%);
-  }
-  .nav--Mact .menubar-bottom{
-    transform: translateY(-50%) rotate(-45deg);
-  } */
-  
 
 }
-/* 데스크탑 디바이스 */
-@media screen and (min-width:62.5em){
-  /* 데스트탑 그리드 */
-  
+/* Desktop Device */
+@media screen and (min-width: 62.5em){
+  /* Desktop grid */
   .col-d3{
-    width: calc(65px*3 + 20px*2);
-
+    width: calc(65px * 3 + 20px * 2);
   }
   .col-d4{
-    width: calc(65px*4 + 20px*3);
-
-  }.col-d5{
-    width: calc(65px*5 + 20px*4);
-
-  }.col-d6{
-    width: calc(65px*6 + 20px*5);
-
-  }.col-d7{
-    width: calc(65px*7 + 20px*6);
-
-  }.col-d8{
-    width: calc(65px *8 + 20px*7);
-
+    width: calc(65px * 4 + 20px * 3);
+  }
+  .col-d5{
+    width: calc(65px * 5 + 20px * 4);
+  }
+  .col-d8{
+    width: calc(65px * 8 + 20px * 7);
   }
   .container{
     align-items: center;
   }
-  .header,.main,.menu{
+  .header, .menu, .main{
     width: 1000px;
-    /* width: 90%; */
   }
-  .navigation,.footer{
+  .navigation, .footer{
     width: 100%;
-  /* }데스크탑 헤더 */
-  }.header{
-    /* background: yellow; */
+  }
+  /* Desktop header */
+  .header{
     display: block;
     position: relative;
-    padding-bottom: 1.5rem;
-
+    padding-bottom: 1.5em;
   }
-  /* 데스크탑 로고 */
+  /* Desktop logo */
   .logo{
-  
-    /* background: blue; */
     position: absolute;
+    left:0;
     top: 50%;
-    left: 0;
     margin: 0;
     transform: translateY(-50%);
-    /* display: none; */
-
   }
-  /* 데스크탑 멤버 */
+  /* Desktop member */
   .member{
     display: flex;
     justify-content: flex-end;
-    /* background: lime; */
   }
   .bar::before{
     content: "|";
-    margin: 0 1em;
-
+    margin: 0 0.5em;
   }
   .member a{
-    /* background: pink; */
     display: inline-block;
     padding: 0.5em 0;
   }
-  /* e데스크 탑 서치 */
-  /* .search{
-    background: yellow; */
- 
-    
-  }[type="search"]{
+  /* Desktop search */
+  [type="search"]{
     width: 40%;
   }
   .btn-search{
-  border: 1px solid #aaa;
-  border-radius: 0.35rem;
-  background: #988574;
-  color: #fff;
-  height: 2em;
-  padding: 0 1em;
-  }
-  /* 데스크탑 메인 메뉴 */
-  .navigation{
-    background: #998888;
+    border: 1px solid #aaa;
+    border-radius: 0.35em;
+    background: #988674;
     color: #fff;
-    box-shadow: 0 -1px 2px 0 #aaa,0 1px 2px 0 #aaa;
-    /* border-top:2px solid #000;
-    border-bottom:2px solid #000;  */
+    height: 2em;
+    padding: 0 1em;
+  }
+  /* Desktop main menu */
+  .navigation{
+    background: #988574;
+    color: #fff;
+    /* border-top: 2px solid #000;
+    border-bottom: 2px solid #000; */
+    box-shadow: 0 -1px 2px 0 #aaa, 0 1px 2px 0 #aaa;
   }
   .btn-menubar{
     display: none;
   }
   .menu{
+    margin-left: auto;
+    margin-right: auto;
     display: flex;
     justify-content: space-between;
-    /* background:orange; */
-    margin-left:auto;
-    margin-right: auto;
   }
   .menu-item{
-    /* background: blue; */
     font-weight: 700;
     font-size: 1.15em;
     padding: 0.35em 0;
     display: block;
     margin-bottom: 0.5em;
-    text-shadow: 1px 0 0  #000,0 1px 0  #000,
-                 -1px 0 0  #000,0 -1px 0  #000;
-
-  }.sub-menu li{
+    text-shadow: 1px 0 0 #000, 0 1px 0 #000,
+                -1px 0 0 #000, 0 -1px 0 #000;
+  }
+  .sub-menu li{
     margin: 0.5em 0;
   }
   .sub-menu a{
-   /* background: purple; */
-   display: block;
-   padding: 0.35em 0;
-   
+    display: block;
+    padding: 0.35em 0;
   }
-
   .main{
     justify-content: space-between;
   }
-
-  
-
-
+}
