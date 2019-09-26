@@ -7,7 +7,7 @@
   box-sizing: border-box;
 }
 /* Reset CSS */
-ul,ol,li{
+ul,ol{
   list-style: none;
   padding-left: 0;
 }
@@ -61,11 +61,11 @@ a{
 
 /* all device */
 .container{
-background: silver;
+/* background: silver; */
 
 }
 .header{
-  background: yellow;
+  /* background: yellow; */
   /* height: 10vh; */
 
 }.navigation{
@@ -188,7 +188,7 @@ background: lime;
     position: absolute;
     top: 5em;
     right: 20px;
-    background: blue;
+    background: transparent;
     overflow: hidden;
     cursor: pointer;
 
@@ -228,24 +228,27 @@ background: lime;
     position:fixed;
     top: 0;
     left: 0;
-    width: 75vw;
+    width: 0;
     height: 100vh;
-    background: rgba(0,0,0,0.85);
-    color: #fff;
-    margin: 0;
-    padding: 2em;
+    overflow: hidden;
     transform: translateX(-100%);
     transition: all 200ms;
 
   }.nav-act .menu{
     transform: none;
+    width: 75vw;
+    background: rgba(0,0,0,0.85);
+    color: #fff;
+    margin: 0;
+    padding: 2em;
+
   }.menu-list{
     margin: 0.5em 0;
   }
   .menu-item{
     display: block;
     padding: 0.5em;
-    background: purple;
+    /* background: purple; */
   }
   .sub-menu{
     display: none;
@@ -321,6 +324,42 @@ background: lime;
   }
   .navigation,.footer{
     width: 100%;
+  /* }데스크탑 헤더 */
+  }.header{
+    /* background: yellow; */
+    display: block;
+    position: relative;
+
+  }
+  /* 데스크탑 로고 */
+  .logo{
+  
+    background: blue;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    display: none;
+
+  }
+  /* 데스크탑 멤버 */
+  .member{
+    display: flex;
+    justify-content: flex-end;
+    /* background: lime; */
+  }
+  .bar::before{
+    content: "|";
+    margin: 0 1em;
+  }
+  .member a{
+    /* background: pink; */
+    display: inline-block;
+    padding: 0.5em 0;
+  }
+  /* 데스크탑 메인 메뉴 */
+  .btn-menubar{
+    display: none;
   }
   .main{
     justify-content: space-between;
