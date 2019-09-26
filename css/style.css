@@ -190,6 +190,7 @@ background: lime;
     right: 20px;
     background: blue;
     overflow: hidden;
+    cursor: pointer;
 
   }.menubar{
     background:#fff;
@@ -223,6 +224,47 @@ background: lime;
     top: 50%;
     transform: translateY(-50%) rotate(-45deg);
   }
+  .menu{
+    position:fixed;
+    top: 0;
+    left: 0;
+    width: 75vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.85);
+    color: #fff;
+    margin: 0;
+    padding: 2em;
+    transform: translateX(-100%);
+    transition: all 200ms;
+
+  }.nav-act .menu{
+    transform: none;
+  }.menu-list{
+    margin: 0.5em 0;
+  }
+  .menu-item{
+    display: block;
+    padding: 0.5em;
+    background: purple;
+  }
+  .sub-menu{
+    display: none;
+    list-style: circle;
+    padding-left: 2em;
+    margin-bottom: 1em;
+    /* background: yellow; */
+
+  }.sub-menu li{
+    margin: 0.5em 0;
+  }
+  .sub-menu a{
+    padding: 0.5em 0;
+    display: block;
+
+  }
+  .menu-act .sub-menu{
+    display: block;
+  }
   /* .menubar-top{
     top: 0;
   }
@@ -241,7 +283,7 @@ background: lime;
   }.nav-act .menubar-middle{
     transform: translate(-100%, -50%);
   }
-  .nav-act .menubar-bottom{
+  .nav--Mact .menubar-bottom{
     transform: translateY(-50%) rotate(-45deg);
   } */
   
