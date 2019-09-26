@@ -9,7 +9,7 @@ $(window).resize(function(){
 if(viewport.matches){
   var nav=$('.navigation');
   var btn=$('.btn-menubar');
-  var lists=$('menu-list');
+  var lists=$('.menu-list');
 
   items.addClass('icon-plus');
   items.attr('role','button');
@@ -29,7 +29,7 @@ btn.on('click',function(e){
   }
 });
   items.on('click',function(e){
-    
+
     lists.removeClass('menu-act');
    $(this).parent().addClass('menu-act');
   });  
