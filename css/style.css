@@ -69,7 +69,7 @@ a{
   /* height: 10vh; */
 
 }.navigation{
-  background: pink;
+  /* background: pink; */
   /* height: 10vh; */
   
 
@@ -153,6 +153,7 @@ background: lime;
     /* background: yellow; */
     text-align: right;
   }[type="search"]{
+    width: calc(100% - 3em);
   border: 1px solid #aaa;
   border-radius: 0.35em;
   height: 2em;
@@ -319,8 +320,9 @@ background: lime;
   .container{
     align-items: center;
   }
-  .header,.main{
+  .header,.main,.menu{
     width: 1000px;
+    /* width: 90%; */
   }
   .navigation,.footer{
     width: 100%;
@@ -329,17 +331,19 @@ background: lime;
     /* background: yellow; */
     display: block;
     position: relative;
+    padding-bottom: 1.5rem;
 
   }
   /* 데스크탑 로고 */
   .logo{
   
-    background: blue;
+    /* background: blue; */
     position: absolute;
-    top: 0;
+    top: 50%;
     left: 0;
     margin: 0;
-    display: none;
+    transform: translateY(-50%);
+    /* display: none; */
 
   }
   /* 데스크탑 멤버 */
@@ -351,20 +355,71 @@ background: lime;
   .bar::before{
     content: "|";
     margin: 0 1em;
+
   }
   .member a{
     /* background: pink; */
     display: inline-block;
     padding: 0.5em 0;
   }
+  /* e데스크 탑 서치 */
+  /* .search{
+    background: yellow; */
+ 
+    
+  }[type="search"]{
+    width: 40%;
+  }
+  .btn-search{
+  border: 1px solid #aaa;
+  border-radius: 0.35rem;
+  background: #988574;
+  color: #fff;
+  height: 2em;
+  padding: 0 1em;
+  }
   /* 데스크탑 메인 메뉴 */
+  .navigation{
+    background: #998888;
+    color: #fff;
+    box-shadow: 0 -1px 2px 0 #aaa,0 1px 2px 0 #aaa;
+    /* border-top:2px solid #000;
+    border-bottom:2px solid #000;  */
+  }
   .btn-menubar{
     display: none;
   }
+  .menu{
+    display: flex;
+    justify-content: space-between;
+    /* background:orange; */
+    margin-left:auto;
+    margin-right: auto;
+  }
+  .menu-item{
+    /* background: blue; */
+    font-weight: 700;
+    font-size: 1.15em;
+    padding: 0.35em 0;
+    display: block;
+    margin-bottom: 0.5em;
+    text-shadow: 1px 0 0  #000,0 1px 0  #000,
+                 -1px 0 0  #000,0 -1px 0  #000;
+
+  }.sub-menu li{
+    margin: 0.5em 0;
+  }
+  .sub-menu a{
+   /* background: purple; */
+   display: block;
+   padding: 0.35em 0;
+   
+  }
+
   .main{
     justify-content: space-between;
   }
-}
+
   
 
 
