@@ -7,7 +7,10 @@
   box-sizing: border-box;
 }
 /* Reset CSS */
-
+ul,ol,li{
+  list-style: none;
+  padding-left: 0;
+}
 fieldset{
   margin: 0;
   padding: 0;
@@ -32,6 +35,7 @@ a{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: space-evenly;
   
 
 }
@@ -39,7 +43,22 @@ a{
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+  justify-content: space-evenly;
 }
+/* 모바일 그리드 */
+/* .col-m1{
+  width: 20%;
+}
+.col-m2{
+  width: 45%;
+}
+.col-m3{
+  width: 70%;
+}
+.col-m4{
+  width: 100%;
+} */
+
 /* all device */
 .container{
 background: silver;
@@ -47,13 +66,16 @@ background: silver;
 }
 .header{
   background: yellow;
+  /* height: 10vh; */
 
 }.navigation{
   background: pink;
+  /* height: 10vh; */
   
 
 }.main{
   background: skyblue;
+  /* height: 70vh; */
 
 }.book{
 background: lime;
@@ -75,7 +97,87 @@ background: lime;
 }
 .footer{
   background: orange;
+  height: 10vh;
+}
+/* 모바일 디바이스 */
+@media screen and (max-width:62.5em){
+  .col-m1{
+    width: 20%;
+  }
+  .col-m2{
+    width: 45%;
+  }
+  .col-m3{
+    width: 70%;
+  }
+  .col-m4{
+    width: 100%;
+  }
+  /* 모바일 헤더 */
+  .header{
+    background: #32302E;
+  }
+  .logo,.member,.search{
+    width: 100%;
+  }
+  /* a모바일 멤버 */
+  .member{
+
+    order: -1;
+    display: flex;
+    justify-content: flex-end;
+    background: #988574;
+    color: #fff;
+    margin: 0;
+    padding: 0.5em 0;
+    
+  }.member a{
+    padding: 0.35em 0;
+    /* background: blue; */
+    display: block;
+    margin-left: 1em;
+  }
+  /* 모바일 로고  */
+  
+
+}
+/* 데스크탑 디바이스 */
+@media screen and (min-width:62.5em){
+  /* 데스트탑 그리드 */
+  
+  .col-d3{
+    width: calc(65px*3 + 20px*2);
+
+  }
+  .col-d4{
+    width: calc(65px*4 + 20px*3);
+
+  }.col-d5{
+    width: calc(65px*5 + 20px*4);
+
+  }.col-d6{
+    width: calc(65px*6 + 20px*5);
+
+  }.col-d7{
+    width: calc(65px*7 + 20px*6);
+
+  }.col-d8{
+    width: calc(65px *8 + 20px*7);
+
+  }
+  .container{
+    align-items: center;
+  }
+  .header,.main{
+    width: 1000px;
+  }
+  .navigation,.footer{
+    width: 100%;
+  }
+  .main{
+    justify-content: space-between;
+  }
 }
   
-}
+
 
