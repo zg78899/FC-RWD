@@ -1,13 +1,15 @@
 @charset "utf-8";
 @import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
 @import url(./fonts.css);
+
 :root{
-  --point1:#abd375;
-  --point2:#e8ca58;
-  --point3:#c7b39a;
-  --point4:#eea60a;
-  --point5:#6aaee6;
+  --point1: #abd375;
+  --point2: #e8ca58;
+  --point3: #c7b39a;
+  --point4: #eea60a;
+  --point5: #6aaee6;
 }
+
 *, *::before, *::after { 
   font-family: 'Spoqa Han Sans', 'Sans-serif'; 
   box-sizing: border-box;
@@ -48,24 +50,23 @@ a{
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
+/* responsive content */
 .responsive{
   max-width: 100%;
   height: auto;
 }
-
 .responsive-container{
   position: relative;
   width: 100%;
-  height: 0!important;
+  height: 0 !important;
 }
 .responsive-iframe{
   position: absolute;
-  top: 0;
-  left: 0;
+  top:0;
+  left:0;
   width: 100%;
   height: 100%;
   border: 0 none;
-
 }
 .responsive-iframe-43{
   padding-top: 75%;
@@ -73,34 +74,7 @@ a{
 .responsive-iframe-169{
   padding-top: 56.25%;
 }
-
-/* All Device */
-
-/* .main{
-  /* background: skyblue; */
-
-/* .book{
-  /* background: lime; */
- 
-/* .news{
-  background: goldenrod;
-}
-.board{
-  background: teal;
-}
-.favorite{
-  background: hotpink;
-}
-.twitter{
-  background: aqua;
-}  */
-/* .footer{
-  background: orange;
-  height: 10vh;
-} */
-
 /* All Search */
-
 .search{
   text-align: right;
 }
@@ -110,19 +84,14 @@ a{
   height: 2em;
   margin-right: 0.5em;
 }
-/*all main content */
-
+/* All main content */
 .sprite{
-  background:  url("./images/sprite_main.png")no-repeat;
+  background: url(./images/sprite_main.png) no-repeat;
   height: 60px;
   padding-left: 65px;
-  /* background: yellow; */
-
 }
 .main{
   width: 100%;
-  
-
 }
 .main [class*="heading"]{
   font-size: 1.2em;
@@ -136,7 +105,7 @@ a{
 .board-heading {
   background-position: 0 -115px;
 }
-.favorite-site-heading {
+.favorite-heading {
   background-position: 0 -345px;
 }
 .twitter-heading {
@@ -147,26 +116,22 @@ a{
   color: var(--point1);
 }
 .news-heading .point {
-  /* color: #e8ca58; */
   color: var(--point2);
 }
 .board-heading .point {
-  /* color: #c7b39a; */
   color: var(--point3);
 }
 .favorite-heading .point {
-  /* color: #eea60a; */
   color: var(--point4);
 }
 .twitter-heading .point {
-  /* color: #6aaee6; */
   color: var(--point5);
 }
+/* recommand book */
 .book-cover{
-  /* background: yellow; */
   text-align: center;
-}.book-detail{
-  /* background: yellow; */
+}
+.book-detail{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -174,38 +139,34 @@ a{
 .book-author-name{
   margin-left: 0.5em;
 }
-  
 .book-grade{
   margin: 0;
   width: 100%;
   text-align: center;
   font-size: 1.5em;
-  color: var(--point1);  
+  color: var(--point1);
 }
 [class$="summary"]{
   line-height: 2;
 }
-/* all board */
+/* All board */
 .board{
-  /* background: yellow; */
   position: relative;
 }
 .board-list{
   margin-left: 1em;
-
 }
 .board-list li{
   display: flex;
-  margin: 0.5em 0;
+  margin: .5em 0;
   align-items: center;
 }
 .board-list a{
   width: calc(100% - 6.5em);
-  padding: 0.5em 0;
-  /* background: yellow; */
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  padding: 0.5em 0;
 }
 .board-more{
   position: absolute;
@@ -213,44 +174,38 @@ a{
   right: 0;
   padding: 0.5em 0;
 }
-
 /* All favorite */
-
 .favorite-list{
-  /* background: yellow; */
   counter-reset: initial;
   margin-left: 1em;
-
-}.favorite-list li{
+}
+.favorite-list li{
   counter-increment: number;
   margin: 0.5em 0;
   display: flex;
   align-items: center;
-
-
-}.favorite-list li::before{
+}
+.favorite-list li::before{
   content: counter(number);
-  padding:  0.5em 0.85em;
+  padding: 0.5em 0.85em;
   background: var(--point4);
   border-radius: 50%;
   margin-right: 1em;
   color: #fff;
 }
 .favorite-list a{
-  /* display: block; */
   padding: 0.5em 0;
 }
-/* all twitter */
+/* All twitter */
 .twitter{
   display: grid;
-  /* background: yellow; */
-  grid-template-columns:  2fr 2fr 1fr;
-  grid-auto-rows: minmax(2em,auto);
+  grid-template-columns: 2fr 2fr 1fr;
+  grid-auto-rows: minmax(2em, auto);
 }
-.twitter-heading,.twitter-user-info,.twitter-summary{
-grid-column: 1/3;
+.twitter-heading, .twitter-user-info, .twitter-summary{
+  grid-column: 1/3;
 }
-.twitter-user-name,.twitter-user-id{
+.twitter-user-name, .twitter-user-id{
   display: inline-block;
   margin: 0;
 }
@@ -264,24 +219,19 @@ grid-column: 1/3;
   border: 1px solid #32302e;
   padding: 0.5em;
   border-radius: 50%;
-  
-
 }
-/*All footer  */
-
+/* All footer */
 .footer{
   background: #988574;
   color: #fff;
   padding: 1.5em;
 }
-
 .address{
   font-style: normal;
   font-size: 0.85em;
 }
-
 /* Mobile Device */
-@media screen  and (min-width:1px) and (max-width: 62.5em){
+@media screen and (min-width: 1px) and (max-width: 62.5em){
   /* mobile grid */
   .col-m1{
     width: 20%;
@@ -296,12 +246,10 @@ grid-column: 1/3;
     width: 100%;
   }
   /* mobile layout */
-
-  .contianer{
+  .container{
     width: 100%;
     position: relative;
   }
-
   /* mobile header */
   .header{
     background: #32302e;
@@ -438,51 +386,43 @@ grid-column: 1/3;
   .menu-act .sub-menu{
     display: block;
   }
-  /* 모바일 메인 */
+  /* Mobile main */
   .main{
     padding: 0 20px;
   }
-  /* 모바일 푸터 */
+  /* Mobile footer */
   .footer{
-
     padding-left: 20px;
     padding-right: 20px;
-
   }
   .address span{
     display: block;
     margin-bottom: 0.5em;
   }
-
 }
-/*  */
-@media screen and (min-width:37.5em) and (max-width:62.5em){
 
-.favorite,.twitter{
-  width: 50%;
+@media screen and (min-width: 37.5em) and (max-width: 62.5em){
+  .favorite, .twitter{
+    width: 50%;
+  }
 }
 
 /* Desktop Device */
 @media screen and (min-width: 62.5em){
   /* Desktop grid */
   .col-d3{
-    /* width: calc(65px * 3 + 20px * 2); */
     width: 23.8%
   }
   .col-d4{
-  /* width: calc(65px * 4 + 20px * 3); */
     width: 32.267%;
   }
   .col-d5{
-    /* width: calc(65px * 5 + 20px * 4); */
     width: 40.733%;
   }
   .col-d8{
-    /* width: calc(65px * 8 + 20px * 7); */
     width: 66.133%;
   }
   .container{
-
     align-items: center;
   }
   .header, .menu, .main{
@@ -492,7 +432,6 @@ grid-column: 1/3;
   .navigation, .footer{
     width: 100%;
   }
-  /* Desktop header */
   /* Desktop header */
   .header{
     display: block;
@@ -575,5 +514,4 @@ grid-column: 1/3;
   .footer{
     text-align: center;
   }
-}
 }
